@@ -1,3 +1,6 @@
 FROM python:buster
 
-RUN pip install poetry
+RUN apt update && apt install portaudio19-dev -y && \
+    pip install poetry && \
+    poetry config virtualenvs.create false
+
